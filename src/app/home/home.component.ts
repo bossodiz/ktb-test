@@ -39,6 +39,11 @@ export class HomeComponent implements OnInit {
     console.log('Search results:', this.list);
   }
 
+  clearSearch() {
+    this.searchTerm = '';
+    this.list = [...this.listOriginal];
+  }
+
   onAdd() {
     if (!this.name || this.age === null) {
       return;
