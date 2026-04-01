@@ -1,0 +1,26 @@
+<div>
+  <h1>Add Item</h1>
+  <input type="text" placeholder="Name..." [(ngModel)]="name" />
+  <input type="number" placeholder="Age..." [(ngModel)]="age" />
+  <button (click)="onAdd()">Add</button>
+  <h1>Search</h1>
+  <input
+    type="text"
+    placeholder="Search..."
+    [(ngModel)]="searchTerm"
+    (input)="onSearch()"
+  />
+
+  <table border="1">
+    <tbody>
+      <tr>
+        <th><button (click)="sortByName()">Name</button></th>
+        <th><button (click)="sortByAge()">Age</button></th>
+      </tr>
+      <tr *ngFor="let item of list">
+        <td>{{ item.name }}</td>
+        <td>{{ item.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
